@@ -1,149 +1,72 @@
-/* --- Color Variables & Root Properties --- */
-:root {
-    --primary-color: #0d47a1;
-    /* Deep River Blue */
-    --secondary-color: #ff6f00;
-    /* Sunset Amber/Orange */
-    --accent1-color: #1a237e;
-    /* Midnight Blue */
-    --accent2-color: #e3f2fd;
-    /* Foam White/Light Blue */
-    --heading-font: "Georgia", "Times New Roman", serif;
-    --body-font: Arial, Helvetica, sans-serif;
-}
-
-/* --- Universal Selector Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* --- Body Base Styles --- */
-body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-    background-color: #fafafa;
-}
-
-/* --- Layout Container Constraints --- */
-header,
-main,
-footer {
-    width: 840px;
-    margin: 0 auto;
-}
-
-/* --- Header & Navigation --- */
+/* Header Layout: CSS Grid */
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    background-color: var(--accent2-color);
-    padding: 10px 20px;
-    border-bottom: 3px solid var(--primary-color);
+    background-color: #1a365d;
+    padding: 1rem 2rem;
 }
 
+header .logo {
+    width: 120px;
+}
+
+/* Navigation Layout: CSS Flexbox */
 header nav ul {
     display: flex;
+    justify-content: flex-end;
     list-style: none;
-}
-
-header nav ul li {
-    margin-left: 20px;
+    gap: 1.5rem;
 }
 
 header nav a {
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    color: var(--primary-color);
+    padding: 0.5rem;
 }
 
-header nav a:hover {
-    color: var(--secondary-color);
+/* Adventures Gallery Layout: 5 Columns Grid */
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-/* --- Typography & Spacing Rules --- */
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
-/* --- Hero Section & Position Overlays --- */
-.hero {
-    position: relative;
-}
-
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
+.adventure-gallery figure {
     text-align: center;
-    background-color: rgba(13, 71, 161, 0.8);
-    color: #ffffff;
-}
-
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 6px;
-}
-
-.hero article img {
-    float: right;
-    width: 125px;
-    height: auto;
-    margin-left: 12px;
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 4px;
+    overflow: hidden;
 }
 
-/* --- Footer & Social Media Links --- */
+.adventure-gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.adventure-gallery figcaption {
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #2d3748;
+}
+
+/* Footer Layout: Flexbox aligned to the right */
 footer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: var(--primary-color);
+    align-items: center;
+    background-color: #1a365d;
     color: #ffffff;
-    padding: 12px 20px;
-    margin-top: 20px;
+    padding: 1rem 2rem;
 }
 
-footer p {
-    margin: 0;
-    padding: 0;
-    font-size: 0.9rem;
-}
-
-.socialmedia {
+footer .socialmedia {
     display: flex;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
-.socialmedia img {
-    display: block;
+    gap: 1rem;
 }
